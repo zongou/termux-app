@@ -28,6 +28,9 @@ local.properties
 *.swo
 *.swp
 
+# VScode
+.vscode
+
 # OS-specific files
 .DS_Store
 .DS_Store?
