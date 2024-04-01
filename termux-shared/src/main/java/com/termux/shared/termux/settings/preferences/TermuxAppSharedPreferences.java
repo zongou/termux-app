@@ -98,8 +98,16 @@ public class TermuxAppSharedPreferences extends AppSharedPreferences {
         return SharedPreferenceUtils.getBoolean(mSharedPreferences, TERMUX_APP.KEY_SOFT_KEYBOARD_ENABLED, TERMUX_APP.DEFAULT_VALUE_KEY_SOFT_KEYBOARD_ENABLED);
     }
 
+    public boolean isBackKeyToggleSoftKeyboard() {
+        return SharedPreferenceUtils.getBoolean(mSharedPreferences, TERMUX_APP.KEY_BACK_KEY_TOGGLE_SOFT_KEYBOARD, TERMUX_APP.DEFAULT_VALUE_KEY_BACK_KEY_TOGGLE_SOFT_KEYBOARD);
+    }
+
     public void setSoftKeyboardEnabled(boolean value) {
         SharedPreferenceUtils.setBoolean(mSharedPreferences, TERMUX_APP.KEY_SOFT_KEYBOARD_ENABLED, value, false);
+    }
+
+    public void setBackKeyToggleSoftKeyboard(boolean value) {
+        SharedPreferenceUtils.setBoolean(mSharedPreferences, TERMUX_APP.KEY_BACK_KEY_TOGGLE_SOFT_KEYBOARD, value, false);
     }
 
     public boolean isSoftKeyboardEnabledOnlyIfNoHardware() {
