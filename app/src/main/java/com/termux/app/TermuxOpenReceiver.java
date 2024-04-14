@@ -90,6 +90,10 @@ public class TermuxOpenReceiver extends BroadcastReceiver {
         sendIntent.setAction(intentAction);
         sendIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_GRANT_READ_URI_PERMISSION);
 
+        if(intentAction.equals(Intent.ACTION_EDIT)){
+            sendIntent.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+        }
+
         String contentTypeToUse;
         if (contentTypeExtra == null) {
             String fileName = fileToShare.getName();
