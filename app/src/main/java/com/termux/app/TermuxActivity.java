@@ -421,7 +421,7 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
                     launchFailsafe = intent.getExtras().getBoolean(TERMUX_ACTIVITY.EXTRA_FAILSAFE_SESSION, false);
                 }
 
-                if (launchFailsafe) {
+                if (launchFailsafe || !getPackageName().equals("com.termux")) {
                     mTermuxTerminalSessionActivityClient.addNewSession(launchFailsafe, null);
                 } else {
                     TermuxInstaller.setupBootstrapIfNeeded(TermuxActivity.this, () -> {
